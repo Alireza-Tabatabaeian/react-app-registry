@@ -31,8 +31,13 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
+    "test": "vitest",
     "clean": "rimraf dist",
     "build": "tsup src/index.ts --dts --format esm,cjs --sourcemap",
     "prepublishOnly": "npm run clean && npm run build"
@@ -42,12 +47,15 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.0",
     "@types/node": "^24.4.0",
     "@types/react": "^19.1.13",
+    "jsdom": "^27.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rimraf": "^6.0.1",
     "tsup": "^8.5.0",
     "typescript": "^5.5.3",
-    "rimraf": "^6.0.1"
+    "vitest": "^3.2.4"
   }
 }
