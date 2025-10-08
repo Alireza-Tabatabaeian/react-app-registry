@@ -1,0 +1,1 @@
+export {setupRegistry} from './registrySetup'

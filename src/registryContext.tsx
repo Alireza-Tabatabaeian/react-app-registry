@@ -29,7 +29,7 @@ export const RegistryContextProvider: React.FC<{
     }, [])
 
     return <RegistryContext.Provider value={api}>{children}</RegistryContext.Provider>
-};
+}
 
 export const useRegistryContext = () => {
     const ctx = useContext(RegistryContext)

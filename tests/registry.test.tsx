@@ -4,7 +4,7 @@ import { renderHook, act } from "@testing-library/react"
 import {
     RegistryContextProvider, RegistryHandler,
     useRegistryContext,
-} from "../dist"
+} from "../dist/esm"
 
 describe("RegistryHandler", () => {
     it("registers and retrieves items", () => {

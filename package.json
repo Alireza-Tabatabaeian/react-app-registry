@@ -20,15 +20,22 @@
   },
   "homepage": "https://github.com/Alireza-Tabatabaeian/react-app-registry#readme",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.js"
+    },
+    "./server": {
+      "import": "./dist/esm/index.server.js",
+      "require": "./dist/cjs/index.server.cjs",
+      "default": "./dist/esm/index.server.js"
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": false,
   "files": [
@@ -38,9 +45,8 @@
   ],
   "scripts": {
     "test": "vitest",
-    "clean": "rimraf dist",
-    "build": "tsup src/index.ts --dts --format esm,cjs --sourcemap",
-    "prepublishOnly": "npm run clean && npm run build"
+    "build": "ts-build-wizard",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -53,8 +59,8 @@
     "jsdom": "^27.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "rimraf": "^6.0.1",
-    "tsup": "^8.5.0",
+    "ts-build-wizard": "^1.0.2",
+    "tsdown": "^0.15.0",
     "typescript": "^5.5.3",
     "vitest": "^3.2.4"
   }

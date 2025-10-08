@@ -6,7 +6,7 @@ import path from 'path'
 // Adjust this import to match your project layout:
 // If you re-export from src/index.ts, use: `import { setupRegistry, RegistryHandler } from '../src'`
 // If you keep files separate, use the specific module paths:
-import { setupRegistry } from '../src'
+import { setupRegistry } from '../src/index.server'
 import { RegistryHandler } from '../src'
 
 describe('setupRegistry (Node-only)', () => {

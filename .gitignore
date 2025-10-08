@@ -31,3 +31,6 @@ pnpm-lock.yaml
 # Misc
 .DS_Store
 *.log
+dist
+tsbuild.wizard.json
+.tmp-wizard

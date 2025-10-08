@@ -48,13 +48,15 @@ export default function App() {
 ## API
 
 - `register(key, item)` — push one item
-- `registerMany(key, items[])`
+- `registerMany(key, items[])` 
 - `loadByKey(key)` → `T[] | undefined`
 - `requireKey(key)` → `T[]` (throws if missing)
 - `getOne(key)` → `T | undefined`
 - `unregister(key, predicate?)`
-- `clear(key?)`
-- `has(key)` / `keys()`
+- `clear(key?)` (if a key doesn't pass, it will clear all entries)
+- `has(key)`
+- `keys()`
+- `size()`
 
 ## Server config loader (optional)
 
