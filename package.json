@@ -1,6 +1,6 @@
 {
   "name": "react-app-registry",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tiny registry/context to dynamically register and resolve React components (and other items) by key.",
   "keywords": [
     "react",
