@@ -23,7 +23,7 @@ export class RegistryHandler<T = unknown> {
         const arr = this.container.get(key) ?? []
         arr.push(...items)
         this.container.set(key, arr)
-    };
+    }
 
     loadByKey = (key: string): T[] | undefined => this.container.get(key)
 

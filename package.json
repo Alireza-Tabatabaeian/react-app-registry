@@ -20,20 +20,18 @@
   },
   "homepage": "https://github.com/Alireza-Tabatabaeian/react-app-registry#readme",
   "type": "module",
-  "main": "./dist/cjs/index.cjs",
+  "main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/esm/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.cjs",
-      "default": "./dist/esm/index.js"
+      "types": "./dist/esm/index.d.ts"
     },
     "./server": {
       "import": "./dist/esm/index.server.js",
-      "require": "./dist/cjs/index.server.cjs",
-      "default": "./dist/esm/index.server.js"
+      "require": "./dist/cjs/index.server.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -59,7 +57,7 @@
     "jsdom": "^27.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "ts-build-wizard": "^1.0.2",
+    "ts-build-wizard": "^1.0.3",
     "tsdown": "^0.15.0",
     "typescript": "^5.5.3",
     "vitest": "^3.2.4"

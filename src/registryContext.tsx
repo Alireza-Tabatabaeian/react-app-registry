@@ -1,16 +1,16 @@
 'use client'
 
 import React, { createContext, useContext, useMemo, useRef } from 'react'
-import { RegistryContextInterface } from './types'
-import {RegistryHandler} from "./RegistryHandler"
+import {RegistryContainer, RegistryContextInterface} from './types'
+import {RegistryHandler} from './RegistryHandler'
 
 const RegistryContext = createContext<RegistryContextInterface | null>(null)
 
 export const RegistryContextProvider: React.FC<{
-    initial?: RegistryHandler<any> | undefined
+    initial?: RegistryContainer<any> | undefined
     children: React.ReactNode
 }> = ({ initial, children }) => {
-    const handlerRef = useRef(initial ?? new RegistryHandler())
+    const handlerRef = useRef(new RegistryHandler(initial))
 
     // avoid re-creating closures on each render
     const api = useMemo<RegistryContextInterface>(() => {
@@ -28,7 +28,11 @@ export const RegistryContextProvider: React.FC<{
         }
     }, [])
 
-    return <RegistryContext.Provider value={api}>{children}</RegistryContext.Provider>
+    return (
+        <RegistryContext.Provider value={api}>
+            {children}
+        </RegistryContext.Provider>
+    )
 }
 
 export const useRegistryContext = () => {
