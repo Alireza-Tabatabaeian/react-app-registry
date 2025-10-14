@@ -34,3 +34,4 @@ pnpm-lock.yaml
 dist
 tsbuild.wizard.json
 .tmp-wizard
+node_modules
